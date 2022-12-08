@@ -1,1 +1,17 @@
 Data that will be used: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+# 1.) Before beginning to clean the data be sure to install the following packages to makwe the process easy 
+install.packages("data.table")
+  library(data.table")
+install.packages("jsonlite")
+  library(jsonlite)
+ ## Kept running into an issue with separating the variables into columns so after research in Stack Overflow and GitHub use the following package 12-7-2022
+install.packghes("reshape2")
+  library(reshape2)
+
+# 2.)  Next is to download the following that will be used for its data. I later changed the name to "smartphone" cause its the study that I am understanding of this project 
+## However be sure to unzip the files cause I ran into an issue with not unzipping the files causing issues that would have been simple from the beginning
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url, file.path(path, "dataFiles.zip"))
+unzip(zipfile = "dataFiles.zip")
+smartphone <- unzip 
