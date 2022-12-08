@@ -29,7 +29,7 @@ Data that will be used: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectf
 # 6.) Load the datasets
   ## If you downloaded the zip.file onto your local files. The two folders that are going to be used is "test" & "train" 
   ## Also include the file location ("UCI HAR Dataset/ ->)
-    train <- read.table("UCI HAR Dataset/test/X_train.txt")[featuresWanted]
+    train <- read.table("UCI HAR Dataset/train/X_train.txt")[featuresWanted]
     trainactivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
     trainsubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
     # Use ("cbind") to merge the two data together. Same will go for "test"
@@ -39,3 +39,7 @@ Data that will be used: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectf
     testactivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
     testsubjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
     test <- cbind(testactivities, testsubjects, test)
+
+# 7.) Merge the Datasets and Labels 
+  Data <- rbind(train, test)
+  colnames(data) <- c("subject", "activity", featuresWanted)
