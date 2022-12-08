@@ -21,3 +21,7 @@ smartphone <- unzip
 # 4.) Load the activity labels & features 
 activityLabels <- read.table("UCI HAR Dataset/activity_labels.txt")
 features <- read.table("UCI HAR Dataset/features.txt")
+  ## If messing up and want to remove data use the (remove()) function to delete 
+
+# 5.) Exctract ONLY the data on MEAN and STANDARD DEVIATION
+featuresWanted <- grep(".*mean.*|.*std.*", features[,2])
