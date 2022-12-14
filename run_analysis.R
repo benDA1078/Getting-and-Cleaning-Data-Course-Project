@@ -45,5 +45,5 @@ Data that will be used: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectf
   colnames(Data) <- c("subject", "activity", featuresWanted)
   Data$activity <- factor(Data$activity, levels = activity_labels[,1], labels = activity_labels[,2])
   Data$subject <- as.factor(Data$subject)
-  write.table(Data.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
+  write.table(Data, "tidy.txt", row.names = FALSE, quote = FALSE)
 
